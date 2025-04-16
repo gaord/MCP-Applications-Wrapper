@@ -152,6 +152,11 @@ then you can access the server via the following url:
 ```bash
 http://localhost:8001/sse
 ```
+or using the following command to test the server for sure:
+
+```bash
+python tests/test_sse_client.py --url http://localhost:8001/sse --language cn --timeout 1800
+```
 > Note: FastMCP automatically runs on port 8000 by default.
 
 ### MCP Tools

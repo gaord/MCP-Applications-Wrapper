@@ -1,11 +1,4 @@
 applications:
-  invoice_app:
-    name: Invoice
-    description: 完成发票和报销数据的匹配工作
-    working_directory: /Volumes/MAC2/magic/发票报销匹配/invoice_matching/src
-    interpreter_type: python
-    command: main.py
-
   echo_app:
     name: Echo Server
     description: A simple Python echo server

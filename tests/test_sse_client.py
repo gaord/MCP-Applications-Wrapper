@@ -330,13 +330,13 @@ async def test_mcp_client(server_url: str = "http://localhost:8000/sse", languag
             apps = await list_applications(client, text, timeout)
             
             # 4. Get invoice_app help information
-            await get_application_help(client, text, "invoice_app", timeout)
+            await get_application_help(client, text, "hello_app", timeout)
             
             # 5. Execute invoice_app
-            await execute_application(client, text, "invoice_app", [
-                "--invoice-file", "/Volumes/MAC2/magic/invoice_reimbursement_matching/invoice_matching/data/invoices.xlsx",
-                "--reimbursement-file", "/Volumes/MAC2/magic/invoice_reimbursement_matching/invoice_matching/data/reimbursements.xlsx",
-                "--output-file", "/Volumes/MAC2/magic/invoice_reimbursement_matching/invoice_matching/data/matching_result.xlsx"
+            await execute_application(client, text, "hello_app", [
+                "-n", "hello Ben!",
+                "-l", "cn",
+                "-r", "3"
             ], timeout)
         
     except Exception as e:
