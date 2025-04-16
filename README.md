@@ -28,8 +28,8 @@ An MCP (Model Context Protocol) server wrapper for various applications, built w
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd mcp-applications-wrapper
+git clone https://github.com/gaord/MCP-Applications-Wrapper.git
+cd MCP-Applications-Wrapper
 ```
 
 2. Create a virtual environment and install dependencies:
@@ -160,7 +160,7 @@ The following MCP tools are available through the server:
 
 - `list_applications`: List all configured applications and their status
 - `get_deployment_mode`: Get the current deployment mode
-- `get_application_help`: Get help information for an application
+- `get_application_help`: Get help information for an application with --help argument
 - `execute_application`: Execute an application with optional arguments
 
 ## Docker Deployment(in progress)
