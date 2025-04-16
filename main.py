@@ -38,8 +38,8 @@ else:
 @app.command()
 def run(
     config_path: str = typer.Argument(..., help="Path to configuration file (YAML or JSON)"),
-    host: str = typer.Option("0.0.0.0", help="Host to bind the server to (not currently supported by FastMCP)"),
-    port: int = typer.Option(8000, help="Port to run the server on (not currently supported by FastMCP)"),
+    host: str = typer.Option("0.0.0.0", help="Host to bind the server to (only effective when using 'sse' transport)"),
+    port: int = typer.Option(8000, help="Port to run the server on (only effective when using 'sse' transport)"),
     transport: str = typer.Option(
         "sse", help="Transport to use (sse, stdio)"
     ),
@@ -70,8 +70,8 @@ def run(
         console.print(f"[bold blue]Deployment mode: {config.deployment_mode}[/bold blue]")
         
         # Inform user about host/port not being used
-        if host != "0.0.0.0" or port != 8000:
-            console.print("[bold yellow]Note: Host and port options are not currently supported by FastMCP[/bold yellow]")
+        if (host != "0.0.0.0" or port != 8000) and transport != "sse":
+            console.print("[bold yellow]Note: Host and port options are only effective when using 'sse' transport[/bold yellow]")
         
         # Run the server
         console.print(f"[bold]Starting MCP server with {transport} transport...[/bold]")
