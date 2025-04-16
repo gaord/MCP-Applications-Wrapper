@@ -1,19 +1,19 @@
 applications:
   echo_app:
-    name: Echo Server
-    description: A simple Python echo server
-    working_directory: examples/echo_server
+    name: Echo App
+    description: A simple Python echo app
+    working_directory: examples
     interpreter_type: python
-    command: echo_server.py
+    command: echo.py
     env_vars:
       PORT: "8888"
    
   hello_app:
     name: Hello World
     description: A simple Node.js hello world server
-    working_directory: examples/hello_server
-    interpreter_type: node
-    command: hello_server.js
+    working_directory: examples
+    interpreter_type: python
+    command: hello.py
     env_vars:
       PORT: "8889"
       NODE_ENV: development
