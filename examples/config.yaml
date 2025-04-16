@@ -1,0 +1,36 @@
+applications:
+  invoice_app:
+    name: Invoice
+    description: 完成发票和报销数据的匹配工作
+    working_directory: /Volumes/MAC2/magic/发票报销匹配/invoice_matching/src
+    interpreter_type: python
+    command: main.py
+
+  echo_app:
+    name: Echo Server
+    description: A simple Python echo server
+    working_directory: examples/echo_server
+    interpreter_type: python
+    command: echo_server.py
+    env_vars:
+      PORT: "8888"
+   
+  hello_app:
+    name: Hello World
+    description: A simple Node.js hello world server
+    working_directory: examples/hello_server
+    interpreter_type: node
+    command: hello_server.js
+    env_vars:
+      PORT: "8889"
+      NODE_ENV: development
+    
+deployment_mode: local
+
+# Docker configuration (uncomment to use Docker deployment)
+# deployment_mode: docker
+# docker_config:
+#   base_image: python:3.11-slim
+#   network: bridge
+#   volumes:
+#     ./examples: /app/examples 
